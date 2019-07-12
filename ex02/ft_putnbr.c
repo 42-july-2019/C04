@@ -6,7 +6,7 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 14:03:12 by alabreui          #+#    #+#             */
-/*   Updated: 2019/07/10 16:53:43 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/07/12 11:19:26 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_putnbr(int nb)
 		ft_putnbr(nb / 10);
 		nb = nb % 10;
 	}
-	else
+	if (nb <= 9)
 	{
 		ft_putchar(nb + 48);
 	}

@@ -6,7 +6,7 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/10 18:32:14 by alabreui          #+#    #+#             */
-/*   Updated: 2019/07/10 20:45:28 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/07/12 11:28:40 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void	assign_digit(int nbr, char *base, int *base_length)
 {
 	if (nbr == -2147483648)
 	{
-		assign_digit(-214748364, base, base_length);
-		nbr = 8;
+		assign_digit(-2147483648 / *base_length, base, base_length);
+		nbr = -2147483648 % *base_length * -1;
 	}
 	if (nbr < 0)
 	{

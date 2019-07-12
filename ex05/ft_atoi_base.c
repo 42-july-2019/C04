@@ -6,7 +6,7 @@
 /*   By: alabreui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 10:10:41 by alabreui          #+#    #+#             */
-/*   Updated: 2019/07/11 12:03:32 by alabreui         ###   ########.fr       */
+/*   Updated: 2019/07/12 11:33:04 by alabreui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,18 @@ int		convert_to_int(char *str, char *base, int *base_length)
 {
 	int i;
 	int result;
+	int current_digit;
 
 	i = 0;
 	result = 0;
-	while (str[i] >= base[0] && str[i] <= base[*base_length - 1])
+	current_digit = get_digit(str[i], base, base_length);
+//	while (str[i] >= base[0] && str[i] <= base[*base_length - 1])
+	while (current_digit != -1)
 	{
 		result = result * *base_length;
-		result = result +
-		get_digit(str[i], base, base_length);
+		result = result + current_digit;
 		i++;
+		current_digit = get_digit(str[i], base, base_length);
 	}
 	return (result);
 }
